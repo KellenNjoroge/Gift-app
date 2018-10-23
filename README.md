@@ -1,12 +1,17 @@
 # Gift app
 The best app for perfect gifts
 
-## Built by
-    [Mahat Marcus](https://github.com/abdirahman-mahat)
-    [Sylvia Elukwal](https://github.com/elkwal)
-    [Phoebe Karanja](https://github.com/phoebekaranja)
-    [Tarick Ali Abdi](https://github.com/shureim)
-    [Kellen Njoroge](https://github.com/KellenNjoroge)
+## Built by 
+
+   [Mahat Marcus](https://github.com/abdirahman-mahat)
+
+   [Sylvia Elukwal](https://github.com/elkwal)
+
+   [Phoebe Karanja](https://github.com/phoebekaranja)
+
+   [Tarick Ali Abdi](https://github.com/shureim)
+
+   [Kellen Njoroge](https://github.com/KellenNjoroge)
 
 ## Technologies Used
 
