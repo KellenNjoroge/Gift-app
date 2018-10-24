@@ -1,7 +1,7 @@
 # Gift app
 The best app for perfect gifts
 
-## Built by 
+## Built by
 
    [Mahat Marcus](https://github.com/abdirahman-mahat)
 
