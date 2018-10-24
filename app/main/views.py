@@ -9,6 +9,6 @@ def index():
     """
     root page function that returns the index page and its data
     """
-    title = "Welcome | Keller's Pitch"
+    title = "Welcome "
 
     return render_template("index.html", title=title)
