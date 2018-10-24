@@ -45,4 +45,11 @@ def results(query):
     with open(photo_name, "wb") as photo:
         photo.write(photo_request.content)
 
-    return '<img src=' + photo_name + '>'
+    image='<img src=' + photo_name + '>'
+    return image
+
+    return render_template('places.html', image=image)
+
+# @main.route("/get_directions/<string:query>")
+# def directions(query):
+#
