@@ -29,6 +29,13 @@
                             <span style="color: red;">[{{ error }}]</span>
                         {% endfor %}
 
+                        <p>{{place_form.location_url.label}}</p>
+                        <p>{{place_form.location_url}}</p>
+                        {% for error in place_form.location_url.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+
                         <p>{{place_form.place_data.label}}</p>
                         <p>{{place_form.place_data}}</p>
                         {% for error in place_form.place_data.errors %}

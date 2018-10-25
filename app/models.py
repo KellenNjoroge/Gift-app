@@ -73,7 +73,7 @@ class Place(db.Model):
     __tablename__ = 'places'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String())
-    places_content = db.Column(db.String())
+    place_content = db.Column(db.String())
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     place_pic = db.Column(db.String(255))
     photo_url = db.Column(db.String(500))

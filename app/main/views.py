@@ -97,11 +97,12 @@ def create_place():
         place_title = place_form.title.data
         place = place_form.place_data.data
         url = place_form.photo_url.data
+        url_second = place_form.location_url.data
 
-        new_place = Place(title=place_title, place_content=place, date_posted=datetime.now(), photo_url=url)
+        new_place = Place(title=place_title, place_content=place, date_posted=datetime.now(), photo_url=url, location_url=url_second)
         new_place.save_place()
 
-        # send_place(new_place)
+        # send_places(new_place)
         # return redirect(url_for('main.place', id=new_place.id))
 
     return render_template('new_place.html', title='New Place', place_form=place_form)
