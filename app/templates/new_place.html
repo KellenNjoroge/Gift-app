@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" id="blog-top">
+    <div class="row blog-entries">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <!-- Flash message -->
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+                </div>
+            {% endfor %}
+            <div class="row blog-entries">
+                <div class="col-md-12">
+                    <h3>Recommend Places for other users</h3>
+                    <form action="" method="post">
+                        {{place_form.hidden_tag()}}
+                        <p>{{place_form.title.label}}</p>
+                        <p>{{place_form.title}}</p>
+                        {% for error in place_form.title.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                        <p>{{place_form.photo_url.label}}</p>
+                        <p>{{place_form.photo_url}}</p>
+                        {% for error in place_form.photo_url.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                        <p>{{place_form.place_data.label}}</p>
+                        <p>{{place_form.place_data}}</p>
+                        {% for error in place_form.place_data.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                        <p>{{place_form.post()}}</p>
+                    </form>
+                    {{simplemde.load}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{% endblock %}
