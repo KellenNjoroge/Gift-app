@@ -1,0 +1,60 @@
+
+            <!-- Displaying profile photo -->
+            {% if user.profile_pic_path %}
+                <img src="{{url_for('static',filename = user.profile_pic_path)}}" alt="" class="img-thumbnail">
+            {% else %}
+            <img src="{{url_for('static',filename = 'photos/avatar.png')}}" alt="">
+            {% endif %}
+            <p class="user-tag"> {{user.username|capitalize}} </p>
+            {% if user == current_user %}
+            <form action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" class="form-control" required>
+                <input type="submit">
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-md-8 stats">
+            <!-- Displaying user bio -->
+            <h3>Bio</h3>
+            <hr>
+            {% if user.bio %}
+                <p> {{user.bio}} </p>
+            {% else %}
+                <p>{{user.username|capitalize}} has no bio</p>
+            {% endif %}
+            {% if user == current_user %}
+            <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit Bio</a>
+            <br>
+            {% endif %}
+            <br>
+            <h3>Stats</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope='col'></th>
+                        <th scope='col'>Stats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apps</td>
+                        <td>{{Apps_no|length}}</td>
+                    </tr>
+                    <tr>
+                        <td>Comments</td>
+                        <td>{{comments_no|length}}</td>
+                    </tr>
+                    <tr>
+                        <td>Apps Liked</td>
+                        <td>{{likes_no|length}}</td>
+                    </tr>
+                    <tr>
+                        <td>Apps Disliked</td>
+                        <td>{{dislikes_no|length}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

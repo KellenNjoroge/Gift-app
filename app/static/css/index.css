@@ -1,0 +1,22 @@
+* {
+    font-family: 'Merienda', cursive;
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Merienda', cursive;
+    font-size: 20px;
+    background-image: url('../photos/background.jpg') !important;
+    background-attachment: fixed;
+}
+
+.jumbotron{
+    background-color:rgba(33, 34, 34, 0.5) !important;
+    color: white !important ;
+    opacity: 0.9px !important;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+    list-style: none !important;
+    text-align: center !important;
