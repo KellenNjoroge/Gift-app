@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+
+
+{% block content %}
+<div class="container-fluid blogs">
+    <div class="row blogs" id="blogs-content">
+        <div class="col-md-12 blogs-title" >
+            <h1>{{place_message}}</h1>
+            <h1>Place</h1>
+        </div>
+        {% for place in all_places %}
+            <div class="col-md-3 blogs-snippet">
+                {% if place.photo_url %}
+                <a href="{{url_for('main.place',id=place.id)}}">
+                    <img src="{{place.photo_url}}" alt="Loading Image" class="img-responsive">
+                </a>
+                {% else %}
+                <a href="{{url_for('main.place',id=place.id)}}">
+                    <img src="{{url_for('static',filename='img/bg-place.jpeg')}}" alt="place-image" class="img-responsive">
+                </a>
+                {% endif %}
+                <div class="blog-snippet-content">
+                    <h3><a href="{{url_for('main.place',id=place.id)}}">{{place.title}}</a></h3>
+                    <hr>
+                    <p class="small"> Posted on: {{place.date_posted.strftime('%Y-%m-%d %H:%M') }} </p>
+                    <p> {{place.place_content|truncate(300)}}<a href="{{url_for('main.place',id=place.id)}}">View More</a></p>
+                    {% if current_user.is_authenticated%}
+                    <a href="{{url_for('main.delete_place',id=place.id)}}">Delete Place</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
