@@ -10,6 +10,8 @@ import imghdr
 from datetime import datetime
 from time import time, sleep
 import markdown2
+import sys
+import random
 
 key = os.environ.get('API_KEY')
 
@@ -25,6 +27,26 @@ def index():
     title = "Welcome "
 
     return render_template("index.html", title=title)
+
+
+# @main.route('/find_gift', methods=['GET', 'POST'])
+# @login_required
+# def gift():
+#     ans = True
+#
+#     while ans:
+#         question = question.html
+#
+#         answers = random.randint(1,8)
+#
+#         if question == "":
+#             sys.exit()
+#
+#
+#         elif answers == 1:
+#             print "It is certain"
+
+
 
 
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
@@ -88,6 +110,22 @@ def place(id):
                            comment_form=comment_form, get_comments=get_comments, comments_count=len(get_place_comments))
 
 
+@main.route('/view_places', methods=['GET', 'POST'])
+def view_places():
+    """
+    to view all places recommended
+
+    """
+    title = "Places Recommended"
+    all_places = Place.get_all_places()
+    if all_places:
+        places = all_places
+        return render_template('all_places.html', title=title, all_place=places)
+    elif not all_places:
+        place_message = 'No places recommended yet'
+        return render_template('all_places.html', title=title, place_message=place_message)
+
+
 @main.route('/create_place', methods=['GET', 'POST'])
 @login_required
 def create_place():
@@ -99,11 +137,11 @@ def create_place():
         url = place_form.photo_url.data
         url_second = place_form.location_url.data
 
-        new_place = Place(title=place_title, place_content=place, date_posted=datetime.now(), photo_url=url, location_url=url_second)
+        new_place = Place(title=place_title, place_content=place, date_posted=datetime.now(), photo_url=url,
+                          location_url=url_second)
         new_place.save_place()
 
-        # send_places(new_place)
-        # return redirect(url_for('main.place', id=new_place.id))
+        return redirect(url_for('main.place', id=new_place.id))
 
     return render_template('new_place.html', title='New Place', place_form=place_form)
 

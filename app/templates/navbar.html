@@ -1,0 +1,8 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/">Home</a>
+        <a href="{{url_for('auth.register')}}">Register</a>
+        <a href="{{url_for('main.create_place')}}">Recommend gift shop</a>
+        <a href="{{url_for('auth.logout')}}">Sign Out</a>
+        <a href="{{url_for('auth.login')}}">Login</a>
+        <a id="start"  href="{{url_for('main.view_places')}}">Recommended gift shops</a>
+</nav>

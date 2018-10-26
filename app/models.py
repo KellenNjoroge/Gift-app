@@ -93,8 +93,8 @@ class Place(db.Model):
 
     @classmethod
     def get_single_place(cls, id):
-        places = Place.query.filter_by(id=id).first()
-        return places
+        place = Place.query.filter_by(id=id).first()
+        return place
 
 
 class Comment(db.Model):
