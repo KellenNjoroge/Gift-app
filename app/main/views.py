@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 from flask import render_template, redirect, url_for, flash, abort, request
 from . import main
 from ..models import User, Place, Comment
@@ -28,7 +27,7 @@ def index():
     """
     title = "Welcome "
 
-    return render_template("index.html", title=title)
+    return render_template("homepage.html", title=title)
 
 
 # @main.route('/find_gift', methods=['GET', 'POST'])
@@ -213,4 +212,3 @@ def results(query):
     return image
 
     return render_template('places.html', image=image)
->>>>>>> keller

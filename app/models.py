@@ -21,14 +21,12 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(255), unique=True, index=True)
     profile_pic_path = db.Column(db.String(255))
     bio = db.Column(db.String(255))
-<<<<<<< HEAD
-=======
+
 
     # comments = db.relationship('Comment', backref='user', lazy='dynamic')
     # upvotes = db.relationship('UpVote', backref='user', lazy='dynamic')
     # downvotes = db.relationship('DownVote', backref='user', lazy='dynamic')
     # photos = db.relationship('PhotoProfile', backref='user', lazy="dynamic")
->>>>>>> keller
 
 
     def save_user(self):
