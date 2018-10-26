@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+=======
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container-fluid welcome-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 welcome">
+                <h1>Welcome</h1>
+                <h2>Gift App </h2>
+                {% if current_user.is_authenticated%}
+                <a id="start"  href="{{url_for('main.retrieve')}}">Get directions to gift shops</a>
+                {% else %}
+                <a id="stop"  href="{{url_for('auth.login')}}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+>>>>>>> keller
