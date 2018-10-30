@@ -5,10 +5,10 @@
 <head>
 		<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
         <!-- stylesheet -->
-        <link rel="stylesheet" href="new_front/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="new_front/Font-roboto/stylesheet.css" />
-        <link rel="stylesheet" href="new_front/font-rubik/stylesheet.css" />
-        <link rel="stylesheet" href="new_front/css/style-new.css" />
+        <link rel="stylesheet" href="static/new_front/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="static/new_front/Font-roboto/stylesheet.css" />
+        <link rel="stylesheet" href="static/new_front/font-rubik/stylesheet.css" />
+        <link rel="stylesheet" href="static/new_front/css/style-new.css" />
 				<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
 	</head>
 <body class="home">
@@ -114,7 +114,7 @@
             </span>
           </div>
         </div>
-        <button  type="submit"  class="rubik-medium pull-right submitForm"> <a href="gifts.html" >Find My Gift</a></button>
+               <button  type="submit"  class="rubik-medium pull-right submitForm"> <a href="{{url_for('main.gift')}}">Find My Gift</a></button>
 
       </div>  
       <div class="findGiftDiv"></div>

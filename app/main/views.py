@@ -30,6 +30,24 @@ def index():
     return render_template("homepage.html", title=title)
 
 
+@main.route('/homepage')
+@login_required
+def home():
+    """
+    root page function that returns the index page and its data
+    """
+    title = "Welcome "
+
+    return render_template("homepage.html", title=title)
+
+
+@main.route('/find_gift')
+def gift():
+    return render_template("gifts.html")
+
+
+
+
 # @main.route('/find_gift', methods=['GET', 'POST'])
 # @login_required
 # def gift():
