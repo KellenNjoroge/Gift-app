@@ -4,6 +4,7 @@ virtual/
 .pytest_cache/
 *.pyc
 instance/
+start.sh 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
